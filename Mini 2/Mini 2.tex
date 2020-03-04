@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 2}
+\author{Due: 11:20am on February $12^{th}$, 2019}
+\date{20 points}
+\maketitle
+
+Give the worst-case analysis for the following functions in terms of big-$\Theta$. You should submit your pdf solution using \LaTeX\ if possible.
+    \begin{enumerate}
+    	\item 
+\begin{lstlisting}
+for(i = 0; i < 3; i++){
+    for(j = 0; j < 10; j++){
+        print i+j;
+    }
+}
+\end{lstlisting}
+There are two nested for loops which run a finite amount of iterations that each add 1 to their variable after completion, and there is one constant time operation performed in the second for loop, therefore, this function has a run time of $\boxed{\Theta(1)}$.
+    	\item 
+\begin{lstlisting}
+//n and m are some positive integers
+for(i = 0; i < n; i++){
+    for(j = 0; j < m; j++){
+        print i+j;
+    }
+}
+\end{lstlisting}
+There are two nested for loops similar to the ones above with one constant time operation in the middle, therefore, this function has a run time of $\boxed{\Theta(nm)}$.
+\newpage
+    	\item 
+\begin{lstlisting}
+//n and m are some positive integers
+for(i = 0; i < n; i++){
+    for(j = 0; j < m; j++){
+        for(int k = 1; k < 1000; k *= 2){
+        	print i+j+k;
+        }
+    }
+}
+\end{lstlisting}
+Although there are 3 nested for loops, the innermost one runs a constant number of times and can be ignored. This reduces the problem to one similar to the one above. There are two nested for loops that depend on two variables $n$ and $m$, therefore, the run time of this function is $\boxed{\Theta(nm)}$.
+    	\item 
+\begin{lstlisting}
+//n and m are some positive integers
+for(i = 0; i < n - 10; i++){
+    for(j = 0; j < m/2; j++){
+        print i+j;
+    }
+}
+\end{lstlisting}
+Similar to the one above, there are two nested for loops each dependent on the two variable integers $n$ and $m$, however it differs from above by the constants that are appended in each loop. Since these are constants however, they can be ignored and the function would, therefore, have a run time of $\boxed{\Theta(nm)}$.
+\newpage
+    	\item 
+\begin{lstlisting}
+//n and m are some positive integers
+for(i = 0; i < n; i++){
+    print i;
+}
+//n and m are some integers
+for(j = 1; j < m; j *= 2){
+    print j;
+}
+\end{lstlisting}
+These for loops are not nested, and therefore must be con considered separately. The top for loop looks similar to the ones above and would have a run time of about $n$. The bottom for loop, however, would have a run time of $\log(n)$ because the value of $j$ grows much faster than $i$ in the previous loop, therefore, the function would have an overall big theta value of $\boxed{\Theta(n)}$.
+    \end{enumerate}
+
+\end{document}

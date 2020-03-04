@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 8}
+\author{Due: 11:20am on February $27^{th}$, 2019}
+\date{20 points}
+\maketitle
+
+Consider the following tree:
+
+\begin{tikzpicture}[level distance=1.5cm,
+  level 1/.style={sibling distance=3cm},
+  level 2/.style={sibling distance=1.5cm}]
+  \node {7}
+    child {node {2}
+      child {node {3} child {node {8} child[missing]}}
+      child[missing]
+    }
+    child {node {4}
+    child {node {5}}
+      child {node {6}}
+      child {node {9}}
+    };
+\end{tikzpicture}
+
+\begin{enumerate}
+	\item \textbf{How many leaves are in the tree?} \\
+	\qquad There are 4 leaves in the tree: 8, 5, 6, and 9. \\
+    \item \textbf{What is the height of node 2?} \\
+    \qquad The height of node 2 is 2. \\
+	\item \textbf{What is the level of node 2?} \\
+	\qquad The level of node 2 is 1. \\
+	\item \textbf{How many children does node 7 have?} \\
+	\qquad Node 7 has 2 children. \\
+    \item \textbf{Who is the parent of node 3?} \\
+    \qquad Node 3's parent is 2.
+\end{enumerate}
+\end{document}

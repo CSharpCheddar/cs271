@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 4}
+\author{Due: 11:20am on February $18^{th}$, 2019}
+\date{20 points}
+\maketitle
+
+The goal of this mini assignment is to get you more experience using ant and build files. You are also creating a short method for the MyArrayList class.
+
+In class we created a list data type that was backed by an array. We created several methods for this class. You must implement a \emph{boolean contains} method that returns true if the MyCircle is contained in the list, false otherwise. You are only comparing Objects with this method. You are not comparing what is contained inside the Object. See the example below for clarification:
+
+\begin{lstlisting}
+MyArrayList myList = new MyArrayList();
+MyCircle test = new MyCircle(10);
+myList.insert(new MyCircle(3));
+myList.insert(new MyCircle(5));
+myList.insert(new MyCircle(8));
+myList.insert(new MyCircle(9));
+myList.insert(test)
+System.out.println(myList.contains(test)); //prints true
+System.out.println(myList.contains(new MyCircle(10))); //prints false
+\end{lstlisting}
+
+Code from Thursday's class is on d2l. When you are finished, upload the following inside 1 zipped file:
+
+\begin{enumerate}
+    \item A working build file.
+    \item A Source folder that contains all of your Java files.
+\end{enumerate}
+
+\end{document}

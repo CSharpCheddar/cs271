@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 2}
+\author{Due: 11:20am on February $14^{th}$, 2019}
+\date{20 points}
+\maketitle
+
+Give the worst-case analysis for the following functions in terms of big-$\Theta$. You should submit your pdf solution using \LaTeX\ if possible.
+    \begin{enumerate}
+    	\item 
+\begin{lstlisting}
+//method is called with someMethod(arr, 0);
+public static boolean someMethod(int[] arr, int loc){
+  if(arr[loc] == 10){
+    return true;
+  } else{
+    return someMethod(arr, loc+1);
+  }
+}
+\end{lstlisting}
+$$T(n)=T(n-1)+\Theta(1)=\boxed{\Theta(n)}$$
+\newpage
+    	\item 
+\begin{lstlisting}
+//method is called with someMethod(arr, arr.length);
+public static int someMethod(int[] arr, int x){
+  int sum = 0;
+  if(x==0){
+    return 0;
+  }
+  for(int i=0; i<arr.length; i++){
+    sum = arr[i];
+  }
+  return sum + someMethod(arr, x-1);
+}
+\end{lstlisting}
+$$T(n)=T(n-1)+\Theta(n)=\boxed{\Theta(n^{2})}$$
+    	\item 
+\begin{lstlisting}
+//method is called with someMethod(arr, 1);
+public static int someMethod(int[] arr, int x){
+  if(x < arr.length){
+    return someMethod(arr, x*2) + someMethod(arr, x*2) + 4;    
+  } else{
+    return x+1;
+  }
+}
+\end{lstlisting}
+$$T(n)=2T(n/2)+\Theta(1)=\boxed{\Theta(n)}$$
+
+    \end{enumerate}
+
+\end{document}

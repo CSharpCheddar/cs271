@@ -1,0 +1,40 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{nopageno}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+	
+	\begin{enumerate}
+		\item You may be asked to  \textit{italicize} or  \textbf{bold} things on your assignments.
+		\item The following are done in math mode, I hope I get 100\% on this assignment!
+	\end{enumerate}
+
+	\renewcommand{\labelitemi}{$\phantom{}$}
+	\renewcommand{\labelitemii}{$\bullet$}
+	\begin{itemize}
+		\item
+		\begin{itemize}
+			\item \ \ $\sum\limits_{x-1}^{n} \frac{n(n+1)}{2}$
+			\item \ \ $x^{100}$
+			\item
+			\begin{description}
+				\item (a) $\vee$
+				\item (b) $\rightarrow$
+			\end{description}
+		\end{itemize}
+	\end{itemize}
+	
+	$$a=b+c$$
+	
+	Finally a table:	
+	
+	\begin{table}[h!]{ \ \ \ }
+		\begin{tabular}{|l|c|}
+			\hline
+			\textbf{Tautology} & \textbf{Name} \\ \hline
+            $(p \wedge (p \rightarrow q)) \rightarrow q$ & Modus ponens \\ \hline
+            $(\neg q \wedge (p \rightarrow q)) \rightarrow \neg p$ & Modus tollens \\ \hline
+		\end{tabular}
+	\end{table}
+	
+\end{document}

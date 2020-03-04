@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\begin{document} 
+\title{Mini 11}
+\author{Martin Mueller}
+\date{Due: 11:20am on March $18^{th}$, 2019}
+\maketitle
+
+\begin{enumerate}
+        \item \textbf{Assume we have a tree of height 10. We insert a node at the $11^{th}$ level. Is it possible for only the root node to be unbalanced? A yes or no answer is sufficient, no justification is needed.}
+
+		\begin{center}
+			No
+		\end{center}		        
+        
+		\item \textbf{Can inserting a node cause more than 1 rotation (single or double)? Provide some justification to back up your answer.}
+		
+		\begin{center}
+			Yes because each time a node is balanced, the pointers that are changing could cause a chain reaction that would cause each node above it to become unbalanced. If you think about the tree as a rigid structure, (as we usually do), we can just imagine that some elements are pulled up, while others are pushed down (which would require a chain of rotations that go up the tree).
+		\end{center}				
+		
+		\item \textbf{Can removing a node cause more than 1 rotation (single or double)? Provide some justification to back up your answer.}
+		
+		\begin{center}
+			Yes. Just as I stated above, moving around the pointers of a group of nodes can create a chain reaction that goes back up the tree.
+		\end{center}			
+		
+		\pagebreak		
+		
+        \item \textbf{What does the AVL tree look like if we add 1 through 6 into the tree in that order?}
+        
+        \begin{center}
+        	\begin{tikzpicture}[level distance=1.5cm,
+		  	level 1/.style={sibling distance=3cm},
+		  	level 2/.style={sibling distance=1.5cm}]
+		  		\node {4}
+		    		child {node {2}
+  	 	 	  		child {node {1}}
+   	 		  		child {node {3}}
+    				}
+   		 			child {node {5}
+   	 				child {}
+      				child {node {6}}
+  	  				};
+			\end{tikzpicture}
+			
+			\textit{Note: The extra branch off of node 5 is there so 6 is more clearly shown as the right child 5.}
+        \end{center}
+    \end{enumerate}
+\end{document}

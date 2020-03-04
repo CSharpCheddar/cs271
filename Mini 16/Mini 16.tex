@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 16}
+\author{Due: 11:20am on April $23^{rd}$, 2019}
+\date{20 points}
+\maketitle
+
+Answer the following questions and submit a pdf solution to the dropbox on d2l:
+
+\begin{enumerate}
+    \item Assume that an undirected graph has $V$ vertices. What is the minimum number of edges that must exist in order for there to be a path from a vertex to every other vertex? For example, consider a vertex set of $\{1,2,3,4,5\}$ and an edge set of $(1,2), (4,5)$. In this case, there is no path from $1$ to $5$.
+    \begin{center}
+    	If $V$ is 0, 0, otherwise $V-1$.
+    \end{center}
+    \item Assume that an undirected graph has 6 vertices. What is the maximum number of edges that can be in that graph?
+    \begin{center}
+    	15
+    \end{center}
+    \item (OPTIONAL) Assume that an undirected graph has $V$ vertices. What is the maximum number of edges that can be in that graph? You should have a formula with respect to $V$.
+    \begin{center}
+    	If V is 0, 0, otherwise $\sum_{i=0}^{V-1}i$.
+    \end{center}
+\end{enumerate}
+
+\end{document}

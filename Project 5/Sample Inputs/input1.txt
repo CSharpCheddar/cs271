@@ -1,0 +1,35 @@
+A - B C E F I J K P Z
+B - C D F Z H
+C - F H
+D - F H O
+E - F H K Q
+F - G M U
+G - J
+H - F
+I - J K L
+J - O
+K - T
+L - F
+M - Q Z X
+N - Y R V
+O - W V
+P - S
+Q - W X Y Z
+R - T U V
+S - 
+T - X
+U - 
+V - F
+W - 
+X - P
+Y - J 
+Z - F
+aA - K P A G
+aB - N
+aC - O T
+aD - aB Q D
+aE - L
+aF - U
+aG - Z K
+aH - Y
+aI - W aE

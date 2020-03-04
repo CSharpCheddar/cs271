@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\begin{document} 
+\title{Mini Assignment 12}
+\author{Due: 11:20am on March $19^{th}$, 2019}
+\date{20 points}
+\maketitle
+
+\begin{enumerate}
+	\item Insert the following nodes into a max heap in this order: 5, 9, 3, 6, 4, 8, 7. You are encouraged to show intermediate steps for partial credit however the final heap is sufficient.
+	\begin{center}
+		\begin{tikzpicture}[level distance=1.5cm,
+		  level 1/.style={sibling distance=3cm},
+		  level 2/.style={sibling distance=1.5cm}]
+		  \node {9}
+		    child {node {6}
+		    child {node {5}}
+		    child {node {4}}
+		    }
+		    child {node {8}
+		    child {node {3}}
+		    child {node {7}}
+	    	};
+		\end{tikzpicture}
+	\end{center}
+	
+    \item What does the max heap look like after 1 call to deleteMax? Again, intermediate steps are encouraged for partial credit.
+    \begin{center}
+		\begin{tikzpicture}[level distance=1.5cm,
+		  level 1/.style={sibling distance=3cm},
+		  level 2/.style={sibling distance=1.5cm}]
+		  \node {8}
+		    child {node {6}
+		    child {node {5}}
+		    child {node {4}}
+		    }
+		    child {node {7}
+		    child {node {3}}
+		    child [missing]
+	    	};
+		\end{tikzpicture}
+	\end{center}
+\end{enumerate}
+\end{document}
